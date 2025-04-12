@@ -8,7 +8,6 @@ body {
   padding: 0;
 }
 
-
 h2 {
   margin-top: 0;
   margin-bottom: 10px;
@@ -17,7 +16,6 @@ h2 {
   font-size: 2em;
   text-align:center;
 }
-
 
 /* ----- HEADER ----- */
 header {
@@ -62,7 +60,6 @@ header {
   color: #333;
 }
 
-
 .header-droite {
   height: auto;
   flex-shrink: 0; /* évite que l'image rétrécisse */
@@ -76,7 +73,6 @@ header {
   display: block;
 }
 
-
 /* ----- CONTENU PRINCIPAL ----- */
 main {
   padding: 30px 20px;
@@ -85,60 +81,71 @@ main {
   text-align: justify;
 }
 
-.row {
+/* ----- ACCROCHE INTRO ----- */
+.intro-accroche {
   display: flex;
-  align-items: stretch;        /* égalise la hauteur des colonnes */
+  align-items: flex-start;
   justify-content: space-between;
-  gap: 0;                      /* pas d’espace entre image et texte */
-  width: 100%;
+  max-width: 900px;
+  margin: 30px auto;
+  text-align: left;
 }
 
-/* ----- PHOTO ----- */
-main img {
+.intro-photo {
+  flex: 0 0 auto;
+  margin-left: 20px;
+}
+
+.intro-photo img {
   max-width: 200px;
   height: auto;
   border-radius: 50%;
-  display: block;
-  margin: 0 auto 30px auto;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: none;
 }
 
-main img:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+.intro-citation {
+  flex: 1;
+  text-align: right;
+  margin-left: 40px;
 }
 
-.row {
-  display: flex;
-  align-items: stretch;
-  gap: 0;
-  width: 100%;
+.intro-citation p {
+  font-size: 1.4em;
+  line-height: 1.6;
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  font-weight: bold;
+  position: relative;
 }
 
-/* Images */
-.hobby-img {
-  width: 250px;
-  height: auto;
-  max-width: 100%
-  border-radius: 50%; /* garde l’effet ovale */
-  object-fit: cover;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  flex-shrink: 0;
+.intro-citation p::before,
+.intro-citation p::after {
+  font-size: 2em;
+  color: #007c91;
+  font-family: serif;
+  position: relative;
 }
 
-.speleo-petite {
-  height: 220px; /* ou 200px selon ton ressenti */
+.intro-citation p::before {
+  content: '“';
+  margin-right: 5px;
 }
 
-
-/* Ordre dans la ligne */
-.hobby-img.left {
-  order: 0;
+.intro-citation p::after {
+  content: '”';
+  margin-left: 5px;
 }
 
-.hobby-img.right {
-  order: 1;
+@media (max-width: 768px) {
+  .intro-accroche {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .intro-citation p {
+    font-size: 1.1em;
+    text-align: center;
+  }
 }
 
 /* ----- Paragraphes intro ----- */
@@ -189,7 +196,6 @@ main img:hover {
   margin-bottom: 10px;
 }
 
-
 /* ----- Blocs formations ----- */
 .formation-bloc {
   background-color: rgba(0, 188, 212, 0.08); /* doux cyan transparent */
@@ -218,7 +224,7 @@ main img:hover {
 
 /* ----- Blocs hobbies ----- */
 .hobby-bloc {
-  background-color: rgba(0, 188, 212, 0.15); /* fond cyan clair */
+  background-color: rgba(0, 188, 212, 0.15);
   border-radius: 15px;
   padding: 20px;
   margin: 20px auto;
@@ -236,14 +242,50 @@ main img:hover {
 .hobby-bloc h3 {
   margin-top: 0;
   margin-bottom: 10px;
-  color: #007c91; /* joli bleu profond qui contraste bien avec le fond cyan */
+  color: #007c91;
   font-weight: bold;
   font-size: 1.4em;
-  text-align:center;
+  text-align: center;
 }
 
 .hobby-bloc p {
   text-indent: 2em;
+}
+
+.row {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 0;
+  width: 100%;
+}
+
+.hobby-img {
+  width: 250px;
+  height: auto;
+  max-width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hobby-img:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.speleo-petite {
+  height: 220px;
+}
+
+.hobby-img.left {
+  order: 0;
+}
+
+.hobby-img.right {
+  order: 1;
 }
 
 .hobby-texte {
@@ -255,21 +297,18 @@ main img:hover {
   text-align: justify;
 }
 
-/* Texte à côté d’une image à gauche → décale à droite */
 .row .hobby-img.left + .hobby-texte {
   margin-left: 20px;
 }
 
-/* Texte à côté d’une image à droite → décale à gauche */
 .row .hobby-texte + .hobby-img.right {
-  margin-left: 0; /* reset */
+  margin-left: 0;
 }
 
 .row .hobby-texte {
   margin-right: 20px;
 }
 
-/* Responsive : passe en colonne sur petits écrans */
 @media (max-width: 768px) {
   .row {
     flex-direction: column;
@@ -285,10 +324,9 @@ main img:hover {
   .hobby-texte {
     padding: 0;
     text-align: center;
-    margin: 0; /* supprime les marges latérales sur mobile */
+    margin: 0;
   }
 }
-
 
 /* ----- Lien adresse e-mail ----- */
 footer {
