@@ -1,0 +1,310 @@
+/* ----- STYLE GÉNÉRAL ----- */
+body {
+  background-color: #f5f5dc; /* fond beige */
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #005c70;
+  font-weight: bold;
+  font-size: 2em;
+  text-align:center;
+}
+
+
+/* ----- HEADER ----- */
+header {
+  background-color: #e7c9c2;
+  padding: 20px;
+  text-align:center;
+}
+.header-container {
+  display: flex;
+  justify-content: space-between; /* sépare gauche et droite */
+  align-items: stretch; /* alignement vertical centré */
+  max-width: 1000px; /* largeur maximale pour éviter l’étirement */
+  margin: auto; /* centre horizontalement */
+  height: 150px;
+}
+
+/* Largeur 50% chacune, exactement la moitié */
+.header-gauche, .header-droite {
+  width: 50%;
+  box-sizing: border-box; /* évite dépassement dû au padding */
+}
+
+.header-gauche {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centre verticalement */
+  padding-right: 50px;
+}
+
+.header-gauche h1 {
+  margin: 0;
+  font-size: 2em;
+}
+
+.header-gauche nav {
+  margin-top: 10px;
+}
+
+.header-gauche nav a {
+  margin-right: 15px;
+  text-decoration: none;
+  color: #333;
+}
+
+
+.header-droite {
+  height: auto;
+  flex-shrink: 0; /* évite que l'image rétrécisse */
+}
+
+.header-droite img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px; /* optionnel, coins arrondis */
+  display: block;
+}
+
+
+/* ----- CONTENU PRINCIPAL ----- */
+main {
+  padding: 30px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: justify;
+}
+
+.row {
+  display: flex;
+  align-items: stretch;        /* égalise la hauteur des colonnes */
+  justify-content: space-between;
+  gap: 0;                      /* pas d’espace entre image et texte */
+  width: 100%;
+}
+
+/* ----- PHOTO ----- */
+main img {
+  max-width: 200px;
+  height: auto;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 30px auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+main img:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+}
+
+.row {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  width: 100%;
+}
+
+/* Images */
+.hobby-img {
+  width: 250px;
+  height: auto;
+  max-width: 100%
+  border-radius: 50%; /* garde l’effet ovale */
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+.speleo-petite {
+  height: 220px; /* ou 200px selon ton ressenti */
+}
+
+
+/* Ordre dans la ligne */
+.hobby-img.left {
+  order: 0;
+}
+
+.hobby-img.right {
+  order: 1;
+}
+
+/* ----- Paragraphes intro ----- */
+.paragraphe-encadre-intro {
+  background-color: rgba(0, 188, 212, 0.15); /* cyan clair transparent */
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  text-align: justify;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.paragraphe-encadre-intro:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+.paragraphe-encadre-intro p {
+  text-indent: 2em; /* renforce la règle dans ce bloc */
+}
+
+/* ----- Blocs expériences ----- */
+
+.experience-bloc {
+  background-color: rgba(0, 188, 212, 0.08);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.experience-bloc:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.experience-bloc h3 {
+  margin: 0;
+  color: #006e87;
+}
+
+.dates {
+  font-style: italic;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+
+/* ----- Blocs formations ----- */
+.formation-bloc {
+  background-color: rgba(0, 188, 212, 0.08); /* doux cyan transparent */
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.formation-bloc:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.formation-bloc h3 {
+  margin-top: 0;
+  color: #005c70;
+}
+
+.dates {
+  font-style: italic;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* ----- Blocs hobbies ----- */
+.hobby-bloc {
+  background-color: rgba(0, 188, 212, 0.15); /* fond cyan clair */
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  text-align: justify;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hobby-bloc:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+.hobby-bloc h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #007c91; /* joli bleu profond qui contraste bien avec le fond cyan */
+  font-weight: bold;
+  font-size: 1.4em;
+  text-align:center;
+}
+
+.hobby-bloc p {
+  text-indent: 2em;
+}
+
+.hobby-texte {
+  flex: 1;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: justify;
+}
+
+/* Texte à côté d’une image à gauche → décale à droite */
+.row .hobby-img.left + .hobby-texte {
+  margin-left: 20px;
+}
+
+/* Texte à côté d’une image à droite → décale à gauche */
+.row .hobby-texte + .hobby-img.right {
+  margin-left: 0; /* reset */
+}
+
+.row .hobby-texte {
+  margin-right: 20px;
+}
+
+/* Responsive : passe en colonne sur petits écrans */
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+
+  .hobby-img {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto 15px;
+    order: 0 !important;
+  }
+
+  .hobby-texte {
+    padding: 0;
+    text-align: center;
+    margin: 0; /* supprime les marges latérales sur mobile */
+  }
+}
+
+
+/* ----- Lien adresse e-mail ----- */
+footer {
+  text-align: center;
+  padding: 30px 0 20px;
+  font-size: 0.9em;
+  color: #555;
+}
+
+footer a {
+  color: #006e87;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
