@@ -448,6 +448,7 @@ main {
   right: 0;
   width: 200px;
   height:auto; 
+  opacity: 0.5;
   background-image: url('photos/motif_circuit.png');
   background-repeat: repeat-y;
   background-position: right top;
