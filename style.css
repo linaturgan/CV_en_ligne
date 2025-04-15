@@ -6,6 +6,8 @@ body {
   color: #333;
   margin: 0;
   padding: 0;
+  position: relative;
+  min-height: 100%;
 }
 
 h2 {
@@ -103,11 +105,18 @@ main {
 }
 
 .intro-photo img {
-  max-width: 200px;
+  max-width: 230px;
   height: auto;
   border-radius: 50%;
   box-shadow: none;
 }
+
+.intro-photo img:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
 
 .intro-citation {
   flex: 1;
@@ -267,7 +276,15 @@ main {
 }
 
 .hobby-img {
-  width: 250px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 4px;
+  background-color: #fff;
+}
+
+.speleo-style {
+  width: 290px;
   height: auto;
   max-width: 100%;
   border-radius: 50%;
@@ -275,15 +292,38 @@ main {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   flex-shrink: 0;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 4px;
+  background-color: #fff;
 }
+
+.foot-style {
+  width: 290px;
+  height: 220px;
+  max-width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 4px;
+  background-color: #fff;
+}
+
+.musique-style {
+  width: 300px;
+  height: 460px;
+  max-width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 4px;
+  background-color: #fff;}
 
 .hobby-img:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-}
-
-.speleo-petite {
-  height: 220px;
 }
 
 .hobby-img.left {
@@ -335,20 +375,86 @@ main {
 }
 
 /* ----- Lien adresse e-mail ----- */
-footer {
-  text-align: center;
-  padding: 30px 0 20px;
-  font-size: 0.9em;
-  color: #555;
+.footer-global {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1em;
+  color: #333;
+  background-color: transparent;
 }
 
-footer a {
-  color: #006e87;
+.footer-gauche,
+.footer-centre,
+.footer-droite {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.footer-gauche {
+  gap: 10px;
+  justify-content: flex-start;
+}
+
+.footer-centre {
+  justify-content: center;
+  text-align: center;
+}
+
+.footer-droite {
+  justify-content: flex-end;
+}
+
+.footer-gauche a,
+.footer-centre a {
   text-decoration: none;
+  color: #006e87;
   font-weight: bold;
 }
 
-footer a:hover {
+.footer-gauche a:hover,
+.footer-centre a:hover {
   text-decoration: underline;
 }
+
+.logo-github {
+  height: 50px;
+  width: auto;
+}
+
+
+/* ----- décorations colonnes ----- */
+.phrase-fixe-droite {
+  position: absolute;
+  right: 40px;
+  top: 40%;
+  width: 180px;
+  font-family: 'Caveat', cursive;
+  font-style: italic;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #6c63ff; /* violet doux, tu peux changer selon ta palette */
+  text-align: center;
+  line-height: 1.4;
+}
+
+.decor-circuit {
+  position: absolute;
+  top: 190px; /* Hauteur de ton header, à ajuster si besoin */
+  bottom: 0;
+  right: 0;
+  width: 200px;
+  height:auto; 
+  background-image: url('photos/motif_circuit.png');
+  background-repeat: repeat-y;
+  background-position: right top;
+  background-size: 100% auto;
+  pointer-events: none;
+  z-index: 0;
+}
+
+
 
